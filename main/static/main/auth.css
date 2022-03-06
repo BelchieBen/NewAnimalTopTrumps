@@ -4,3 +4,8 @@
     align-items: center;
     min-height: 100vh;
 }
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View, CreateView, FormView
 from ..forms.auth_forms import registerForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm 
 
@@ -36,3 +36,7 @@ class Login(View):
                 return redirect('home')
             else:
                 messages.error('Authentication failed')
+
+def Logout(request):
+    logout(request)
+    return redirect('login')
