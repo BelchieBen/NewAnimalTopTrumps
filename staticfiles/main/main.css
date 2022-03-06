@@ -1,0 +1,10 @@
+* {
+    @import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins&display=swap');
+    font-family: 'League Gothic', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: red;
+}
+
+h1{
+    color: green;
+}
