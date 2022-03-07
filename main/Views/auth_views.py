@@ -7,7 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 
 class register(View):
     def get(self, request, *args, **kwargs):
-        form = registerForm
+        form = registerForm()
         return render(request, 'main/auth/register.html', context={"register_form":form})
 
     def post(self, request, *args, **kwargs):
@@ -18,6 +18,7 @@ class register(View):
             messages.success(request, "Registration Successfull")
             return redirect('home')
         messages.error(request, "Registration Unsuccessful")
+        return redirect('register')
 
 class Login(View):
     def get(self, request, *args, **kwargs):

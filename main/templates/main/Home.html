@@ -1,5 +1,18 @@
 {% extends "main/base/base.html" %}
 
 {% block content %}
-<h1>Testing</h1>
+<div class="main-content">
+    <h1>Animal Top Trumps</h1>
+    <div class="room_btns_div">
+        <a href="{% url 'create_room' %}" class="room_btns create_btn">Create a room</a>
+        <a onclick="displayCreateRoomForm()" class="room_btns join_btn">Join a room</a>
+    </div>
+
+    <form method="post" id="join_room_form">
+        <h2>Join a room</h2>
+        {% csrf_token %}
+        {{join_room}}
+        <button type="submit" class="join_submit">Join</button>
+    </form>
+</div>
 {% endblock content %}

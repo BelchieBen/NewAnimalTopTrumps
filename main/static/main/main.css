@@ -5,5 +5,69 @@
 }
 
 .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:40%;
+    border: 1px solid #41436A;
+    border-radius: 12px;
+    background-color: #41436A;
+    color: #fff;
+}
+
+.room_btns_div{
+    display: flex;
+    flex-direction: row;
+}
+
+.room_btns{
+    padding: 16px;
+    margin: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.join_btn{
+    background-color: #FE9677;
+}
+
+.create_btn{
+    background-color: #F64668;
+}
+
+.join_submit{
+    background-color: #984063;
+    width:100%;
+    color: #fff;
+    border-radius:4px;
+    border: none;
+    margin-top: 8px;;
+}
+
+#join_room_form{
+    display: none;
+    flex-direction: column;
+    padding-bottom: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    padding:6px;
+    border: 1px solid #41436A;
+    border-radius: 8px;
+}
+
+label{
+    display: none;
 }

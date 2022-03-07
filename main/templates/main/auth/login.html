@@ -5,6 +5,7 @@
     <h1>Login</h1>
     {% csrf_token %}
     {{login_form}}
-    <button type="submit">Login</button>
+    <button type="submit">Login</button>   
+    <a href="{% url 'register' %}" >New Here?</a>
 </form>
 {% endblock content %}
