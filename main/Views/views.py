@@ -43,7 +43,7 @@ class join_room(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         animal_response = requests.get('https://zoo-animal-api.herokuapp.com/animals/rand')
         animal_json = animal_response.json()
-        animal = Animal.objects.create(
+        animal = Animal(
             name = animal_json['name'],
             type =  animal_json['animal_type'],
             length =  animal_json['length_max'],
@@ -54,7 +54,7 @@ class join_room(LoginRequiredMixin, View):
             image =  animal_json['image_link'],
         )
 
-        animal.save()
+        
         return render(request, 'main/animals/AnimalPage.html', context={"animal": animal})
 
     
