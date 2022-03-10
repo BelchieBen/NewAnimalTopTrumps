@@ -41,6 +41,11 @@
     background-color: #FE9677;
 }
 
+.play_btn{
+    background-color: #984063;
+    border: none;
+}
+
 .create_btn{
     background-color: #F64668;
 }
@@ -70,4 +75,19 @@
 
 label{
     display: none;
+}
+
+.animal-image{
+    height: 300px;
+    margin-bottom: 16px;
+}
+
+.animal_lbl{
+    color: #984063;
+    margin-right: 8px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
 }

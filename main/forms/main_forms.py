@@ -7,5 +7,5 @@ class JoinRoomForm(forms.ModelForm):
         model = Room
         fields = ("code",)
 
-    code = forms.CharField(required=True, widget=forms.TextInput(attrs={'class':'input', 'placeholder':'Room Code'}))
+    code = forms.CharField(required=True, widget=forms.TextInput(attrs={'class':'input', 'placeholder':'Room Code', 'max_length':'4'}))
 

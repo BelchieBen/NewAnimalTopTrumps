@@ -1,0 +1,19 @@
+{% extends "main/base/base.html" %}
+
+{% block content %}
+<div class="main-content">
+<h1>{{animal.name}}</h1>
+<div class="row"><h3 class="animal_lbl">Animal Type: </h3><h3> {{animal.type}}</h3></div>
+<div class="row"><h3 class="animal_lbl">Length: </h3><h3> {{animal.length}} ft</h3></div>
+<div class="row"><h3 class="animal_lbl">Weight: </h3><h3> {{animal.weight}} lbs</h3></div>
+<div class="row"><h3 class="animal_lbl">Lifespan: </h3><h3> {{animal.lifespan}} years</h3></div>
+<div class="row"><h3 class="animal_lbl">Habitat: </h3><h3> {{animal.habitat}}</h3></div>
+<div class="row"><h3 class="animal_lbl">Diet: </h3><h3> {{animal.diet}}</h3></div>
+<img src="{{animal.image}}" class="animal-image">
+<form method="post">
+    {% csrf_token %}
+    <button class="room_btns play_btn" type="submit">New Animal</button>
+</form>
+    
+</div>
+{% endblock content %}

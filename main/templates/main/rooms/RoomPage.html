@@ -1,0 +1,13 @@
+{% extends "main/base/base.html" %}
+
+{% block content %}
+<div class="main-content">
+    <h1>Room: {{room.code}}</h1>
+    <h3>Host: {{room.host}}</h3>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="room_btns play_btn">Play</button>
+    </form>
+    
+</div>
+{% endblock content %}
