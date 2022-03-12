@@ -14,7 +14,7 @@ class Players(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.player} has joined {self.room.code}'
+        return f'{self.player}'
 
 
 class Animal(models.Model):

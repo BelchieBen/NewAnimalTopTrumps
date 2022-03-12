@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View, CreateView, FormView
 from django.http.response import HttpResponse
 from ..forms.main_forms import JoinRoomForm
-from ..models import Room, Animal
+from ..models import Room, Animal, Players
 import random
 import string
 import requests
@@ -38,7 +38,14 @@ class join_room(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         code = self.kwargs.get('code')
         room = Room.objects.get(code = code)
-        return render(request, 'main/rooms/RoomPage.html', context={"room": room})
+        players = Players.objects.filter(room = room)
+        if players.exists():
+            for p in players:
+                if self.request.user != p.player:
+                    Players.objects.create(room = room, player = self.request.user)
+        else:
+            Players.objects.create(room = room, player = self.request.user)
+        return render(request, 'main/rooms/RoomPage.html', context={"room": room, "players": players})
 
     def post(self, request, *args, **kwargs):
         animal_response = requests.get('https://zoo-animal-api.herokuapp.com/animals/rand')

@@ -4,6 +4,10 @@
 <div class="main-content">
     <h1>Room: {{room.code}}</h1>
     <h3>Host: {{room.host}}</h3>
+    <h3>Players:</h3>
+    {% for player in players %}
+    <h3> {{player}} </h3>
+    {% endfor %}
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="room_btns play_btn">Play</button>
